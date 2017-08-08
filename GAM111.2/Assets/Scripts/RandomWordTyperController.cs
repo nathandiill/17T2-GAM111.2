@@ -22,7 +22,7 @@ public class RandomWordTyperController : MonoBehaviour
 	
     public void ChooseNewWord()
     {
-        textMesh.text = wordParser.GetRandomWord();
+        textMesh.text = wordParser.GetCurrentWord();
         Instantiate(Enemy);
         startTime = Time.timeSinceLevelLoad;
     }

@@ -9,7 +9,8 @@ using System.Linq;
 public class WordParser : MonoBehaviour
 {
     //text data or dictionary
-    public TextAsset textDataSource;
+    public TextAsset textDataCurrentLevel;
+    public int currentWord = -1;
 
     //collection of words
     public List<string> allWords = new List<string>();
@@ -17,21 +18,27 @@ public class WordParser : MonoBehaviour
     //what we separate our string by
     private readonly char[] WORD_SEPARATOR = new char[] { '\n', ' ', '\r'};
 
-    //get random word
-    public string GetRandomWord()
+    //get current word
+    public string GetCurrentWord()
     {
-        var wordIndex = Random.Range(0, allWords.Count);
-
-        return allWords[wordIndex];
+        if (currentWord > 10)
+        {
+            return allWords[currentWord];
+        }
+        else
+        {
+            Debug.Log("Bam");
+            return allWords[currentWord + 1];
+        }
     }
 
     //parse data source and create the list
     private void Start()
     {
-        var stringArray = textDataSource.text.Split(WORD_SEPARATOR);
+        var stringArrayCurrent = textDataCurrentLevel.text.Split(WORD_SEPARATOR);
 
         //convert to List
-        allWords = stringArray.ToList();
+        allWords = stringArrayCurrent.ToList();
 
         //remove emptys
         allWords.RemoveAll(x => string.IsNullOrEmpty(x));
