@@ -8,28 +8,25 @@ using System.Linq;
 /// </summary>
 public class WordParser : MonoBehaviour
 {
+    int currentWord = 9;
     //text data or dictionary
     public TextAsset textDataCurrentLevel;
-    public int currentWord = -1;
 
     //collection of words
     public List<string> allWords = new List<string>();
 
     //what we separate our string by
-    private readonly char[] WORD_SEPARATOR = new char[] { '\n', ' ', '\r'};
+    private readonly char[] WORD_SEPARATOR = new char[] { '\n', ' ', '\r' };
 
     //get current word
     public string GetCurrentWord()
     {
-        if (currentWord > 10)
+        for (int i = 0; i < currentWord -1; i++)
         {
+            Debug.Log("Boo");
             return allWords[currentWord];
         }
-        else
-        {
-            Debug.Log("Bam");
-            return allWords[currentWord + 1];
-        }
+        return allWords[currentWord];
     }
 
     //parse data source and create the list
