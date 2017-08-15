@@ -8,6 +8,13 @@ using System.Linq;
 /// </summary>
 public class WordParser : MonoBehaviour
 {
+    public static WordParser Instance;
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
     public int currentWord = -1;
     //text data or dictionary
     public TextAsset textDataCurrentLevel;
@@ -24,8 +31,7 @@ public class WordParser : MonoBehaviour
     {
         if (string.Equals(GatherStringInput.Instance.userInput, Level1Condition))
         {
-            //textDataCurrentLevel = FindObjectsOfType<TextAsset>;
-            Debug.Log("Yay");
+            CurrentLevelParser.Instance.fsm.ChangeState(CurrentLevelParser.States.Level2);
         }
         else
         {
@@ -35,7 +41,7 @@ public class WordParser : MonoBehaviour
     }
 
     //parse data source and create the list
-    private void Start()
+    public void Start()
     {
         var stringArrayCurrent = textDataCurrentLevel.text.Split(WORD_SEPARATOR);
 

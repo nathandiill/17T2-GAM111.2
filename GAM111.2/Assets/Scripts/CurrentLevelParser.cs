@@ -5,6 +5,13 @@ using UnityEngine;
 
 public class CurrentLevelParser : MonoBehaviour {
 
+    public static CurrentLevelParser Instance;
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
     public enum States
     {
         Level1,
@@ -14,7 +21,7 @@ public class CurrentLevelParser : MonoBehaviour {
         Level5,
     }
 
-    StateMachine<States> fsm;
+    public StateMachine<States> fsm;
 
     void Start()
     {
@@ -30,6 +37,7 @@ public class CurrentLevelParser : MonoBehaviour {
 
     void Level2_Enter()
     {
+        //WordParser.Instance = 
         Debug.Log("Level2");
     }
 }
