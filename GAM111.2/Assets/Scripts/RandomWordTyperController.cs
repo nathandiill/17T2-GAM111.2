@@ -11,7 +11,8 @@ public class RandomWordTyperController : MonoBehaviour
     public TextMesh textMesh;
     public WordParser wordParser;
     public float startTime;
-    public GameObject Enemy;
+    public GameObject Enemyprefab;
+    public GameObject EnemyInstance;
     public ParticleSystem ps;
 
 	// Use this for initialization
@@ -23,7 +24,7 @@ public class RandomWordTyperController : MonoBehaviour
     public void ChooseNewWord()
     {
         textMesh.text = wordParser.GetCurrentWord();
-        Instantiate(Enemy);
+        EnemyInstance = Instantiate(Enemyprefab);
         startTime = Time.timeSinceLevelLoad;
     }
 
@@ -38,7 +39,7 @@ public class RandomWordTyperController : MonoBehaviour
             WCData.timeTaken = Time.timeSinceLevelLoad - startTime;
 
             GlobalEvents.OnWordCorrect.Invoke(WCData);
-            Destroy(GameObject.Find(Enemy.name + "(Clone)"));
+            Destroy(EnemyInstance);
             Instantiate(ps);
             ChooseNewWord();
         }

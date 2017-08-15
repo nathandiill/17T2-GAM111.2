@@ -8,9 +8,10 @@ using System.Linq;
 /// </summary>
 public class WordParser : MonoBehaviour
 {
-    int currentWord = 9;
+    public int currentWord = -1;
     //text data or dictionary
     public TextAsset textDataCurrentLevel;
+    public string Level1Condition = "stop";
 
     //collection of words
     public List<string> allWords = new List<string>();
@@ -21,10 +22,14 @@ public class WordParser : MonoBehaviour
     //get current word
     public string GetCurrentWord()
     {
-        for (int i = 0; i < currentWord -1; i++)
+        if (string.Equals(GatherStringInput.Instance.userInput, Level1Condition))
         {
-            Debug.Log("Boo");
-            return allWords[currentWord];
+            //textDataCurrentLevel = FindObjectsOfType<TextAsset>;
+            Debug.Log("Yay");
+        }
+        else
+        {
+            currentWord = currentWord + 1;
         }
         return allWords[currentWord];
     }

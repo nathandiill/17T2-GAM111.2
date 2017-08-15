@@ -23,8 +23,13 @@ public class CurrentLevelParser : MonoBehaviour {
         fsm.ChangeState(States.Level1);
     }
 
-    void Level1_Enter()
+    void Level1_Update()
     {
+       
+    }
 
+    void Level2_Enter()
+    {
+        Debug.Log("Level2");
     }
 }

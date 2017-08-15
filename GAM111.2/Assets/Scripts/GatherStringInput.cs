@@ -9,6 +9,13 @@ using UnityEngine.Events;
 /// </summary>
 public class GatherStringInput : MonoBehaviour
 {
+    public static GatherStringInput Instance;
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
     public Text previewCurrentlyTypedText;
 
     [System.Serializable]
