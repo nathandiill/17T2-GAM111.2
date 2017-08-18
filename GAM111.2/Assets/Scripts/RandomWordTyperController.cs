@@ -29,7 +29,7 @@ public class RandomWordTyperController : MonoBehaviour
     {
         if(textMesh.text == typed)
         {
-            Debug.Log("Winnar");
+            AudioManager.Instance.correctWordAudio();
 
             var WCData = new WordCorrectData();
             WCData.enteredString = typed;
@@ -42,7 +42,7 @@ public class RandomWordTyperController : MonoBehaviour
         }
         else
         {
-            Debug.Log("WRONG, you lose sir");
+            AudioManager.Instance.wrongWordAudio();
         }
     }
 }

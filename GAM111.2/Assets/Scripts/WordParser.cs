@@ -31,6 +31,7 @@ public class WordParser : MonoBehaviour
     {
         if (string.Equals(GatherStringInput.Instance.userInput, Level1Condition))
         {
+            TimeManager.Instance.wpm = 10 / (TimeManager.Instance.currentTime * 0.0166667f);
             CurrentLevelParser.Instance.fsm.ChangeState(CurrentLevelParser.States.Level2);
         }
         else
