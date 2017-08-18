@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-/// <summary>
-/// Compares user entered to randomly selected word from parser
-/// </summary>
 public class RandomWordTyperController : MonoBehaviour
 {
     public TextMesh textMesh;

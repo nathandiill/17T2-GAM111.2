@@ -4,9 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-/// <summary>
-/// Gathers all user string based character input over time
-/// </summary>
 public class GatherStringInput : MonoBehaviour
 {
     public static GatherStringInput Instance;

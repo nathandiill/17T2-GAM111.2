@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-/// <summary>
-/// Splits a textasset string by newlines for random selection
-/// </summary>
 public class WordParser : MonoBehaviour
 {
     public static WordParser Instance;

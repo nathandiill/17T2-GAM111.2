@@ -13,9 +13,6 @@ public class WordCorrectData
 [System.Serializable]
 public class UnityEventWordCorrect : UnityEvent<WordCorrectData> { }
 
-/// <summary>
-/// Global routing of game events
-/// </summary>
 public static class GlobalEvents
 {
     public static UnityEventWordCorrect OnWordCorrect = new UnityEventWordCorrect();
