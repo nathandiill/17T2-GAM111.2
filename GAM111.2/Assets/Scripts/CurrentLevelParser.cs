@@ -37,7 +37,6 @@ public class CurrentLevelParser : MonoBehaviour {
 
     void Level2_Enter()
     {
-        //WordParser.Instance = 
         Debug.Log("Level2");
     }
 }

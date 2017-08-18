@@ -13,9 +13,12 @@ public class WordParser : MonoBehaviour
     }
 
     public int currentWord = -1;
-    //text data or dictionary
     public TextAsset textDataCurrentLevel;
     public string Level1Condition = "stop";
+    public string Level2Condition = "close";
+    public string Level3Condition = "letter";
+    public string Level4Condition = "however";
+    public string Level5Condition = "occasion";
 
     //collection of words
     public List<string> allWords = new List<string>();
